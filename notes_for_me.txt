@@ -105,3 +105,5 @@ python manage.py test
 
 1.Создание проекта, приложения и модели
 
+2. Модель поста и Generic Relation
+
