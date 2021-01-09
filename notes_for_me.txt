@@ -107,3 +107,5 @@ python manage.py test
 
 2. Модель поста и Generic Relation
 
+3. Использование темплэйт тегов (CUSTOM TEMPLATE FILTER дериктория <templatetags>) для вывода комментариев
+
