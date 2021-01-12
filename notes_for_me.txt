@@ -109,3 +109,5 @@ python manage.py test
 
 3. Использование темплэйт тегов (CUSTOM TEMPLATE FILTER дериктория <templatetags>) для вывода комментариев
 
+4. Дерево с помощью рекурсии
+
