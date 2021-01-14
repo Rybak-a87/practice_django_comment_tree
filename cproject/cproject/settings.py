@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "comments",    # добавить приложение (зарегистрировать)
+    "crispy_forms"
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,5 @@ STATICFILES_DIRS = (    # директории где Джанго будет и
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")    # подключение папки "media" в корне проекта
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"

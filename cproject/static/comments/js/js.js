@@ -1,39 +1,5 @@
-{% load static %}
-{% load comments_tree %}
-{% load crispy_forms_tags %}
+"use strict";
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <!--подключение стилей Bootstrap-->
-      <link href="{% static 'comments/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-</head>
-<body>
-    <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
-            {{ comments|comments_filter }} <!-- 1-аргумент 2-функция -->
-            <hr>
-            <div class="col-md-12">
-                <form action="{% url 'comments:comment_create' %}" method="POST">
-                    {% csrf_token %}
-                    {{ comment_form|crispy }}
-                    <input type="submit" class="btn btn-primary" value="Отправить">
-                </form>
-            </div>
-        </div>
-        <div class="col-md-3"></div>
-
-    </div>
-
-</body>
-    <!--подключение jquery js Bootstrap-->
-    <script src="{% static 'comments/vendor/jquery/jquery.min.js' %}"></script>
-    <script src="{% static 'comments/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-<!--    <script src="{% static 'comments/js/js.js' %}"></script>-->
-<script>
 $(document).ready(function (){    //запускается функция
     $(".reply").on("click", function (){    // при клике на класс reply добавляется иветн - click и запускается функция
         var parentId = $(this).attr("data-id")    // получение id
@@ -60,7 +26,7 @@ $(document).ready(function (){    //запускается функция
             return cookieValue;
         }
         const csrftoken = getCookie('csrftoken');
-        var data = {
+        data = {
             user : "{{ request.user.username }}",
             parentId: parentId,
             text: text,
@@ -71,12 +37,10 @@ $(document).ready(function (){    //запускается функция
         $.ajax({
             method: "POST",    // метод запроса
             data: data,    // передача данных
-            url: "{% url 'comments:comment_child_create' %}",    // URL
+            url: "{% url 'comment_child_create' %}"    // URL
             success: function (data){    // если комментарий успешно добавился
-                window.location.replace("/post-comments")    // редирект на страницу
+                window/location.replace("/post-comments")    // редирект на страницу
             }
         })
     })
 })
-</script>
-</html>

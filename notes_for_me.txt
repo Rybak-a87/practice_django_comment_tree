@@ -113,3 +113,4 @@ python manage.py test
 
 5. Вывод дерева комментариев в шаблоне
 
+6. Рендеринг в шаблоне | Bootstrap+jQuery+django
